@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 // Connect DB
 mongoose.connect(
-    'Your MongoDB URL',
+    'mongodb+srv://Jesper-H:jesper123@cluster.gqr6d.mongodb.net/Cluster?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => console.log('Connected to DB')
 )
