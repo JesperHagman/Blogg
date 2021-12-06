@@ -5,3 +5,12 @@ td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+.rightSide {
+    float: right;
+}
+#blog-list{
+    width: 100%; 
+}
+#container{
+    margin: 0 10%;
+}

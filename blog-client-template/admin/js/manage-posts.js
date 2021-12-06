@@ -24,9 +24,9 @@ async function fetchAllBlogPosts() {
 
                 <tr> 
                     <td>${blog.title}</td>
-                    <td> ${blog.author}</td> 
-                    <td>${blog.tags}</td>
-                    <td>${formatedDate}</td> 
+                    <td> ${blog.author}</td>  
+                    <td>${blog.tags}</td> 
+                    <td>${formatedDate}</td>  
                     <td>  
                         <a href="../admin/update-post.html?id=${blog['_id']}">Update</a> |
                         <a class="delete-link" data-id="${blog['_id']}" href="#">Delete</a>
@@ -54,12 +54,10 @@ function deleteBlogEvent() {
                         method: 'DELETE'
                     }
                 );
-
                 e.target.parentNode.parentNode.remove();
             } catch(error) {
                 console.log(error)
             }
-
         })
     }
 }
