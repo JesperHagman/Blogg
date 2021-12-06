@@ -33,23 +33,11 @@ async function fetchAllBlogPosts() {
                     </td>
                 </tr>
             `
-                /* `
-                <li class="list-group-item">
-                    <p>${blog.content} <br> <span class="date">- ${formatedDate}</span> </p> 
-                    
-                    <div>
-                        <a href="../admin/update-post.html?id=${blog['_id']}">Update</a> |
-                        <a class="delete-link" data-id="${blog['_id']}" href="#">Delete</a> 
-                    </div>
-                </li>
-            `; */
         }
-
         document.getElementById('blog-list').innerHTML = blogPostsHTML;
     } catch(error) {
         console.log(error);
     }  
-
     deleteBlogEvent();
 }
 
