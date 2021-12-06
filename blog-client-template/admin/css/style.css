@@ -1,3 +1,6 @@
+html{
+    background-color: lightblue;
+}
 #blog-list, 
 tr,
 th,
@@ -9,7 +12,8 @@ td {
     float: right;
 }
 #blog-list{
-    width: 100%; 
+    width: 100%;
+    background-color: white; 
 }
 #container{
     margin: 0 10%;
