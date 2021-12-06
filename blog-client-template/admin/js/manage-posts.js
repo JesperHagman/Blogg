@@ -15,11 +15,18 @@ async function fetchAllBlogPosts() {
             console.log(blog['_id'])
             blogPostsHTML += `
                 <tr> 
-                    <th> Title </th> <th> Author </th> <th> Date </th> <th> Action </th>
+                    <th>Title</th> 
+                    <th>Author</th>
+                    <th>Tags</th>
+                    <th>Date</th> 
+                    <th>Action</th>
                 </tr>
 
                 <tr> 
-                    <td> ${blog.title} </td> <td> ${blog.author} </td> <td> ${blog.tags} </td> <td> ${formatedDate} </td> 
+                    <td>${blog.title}</td>
+                    <td> ${blog.author}</td> 
+                    <td>${blog.tags}</td>
+                    <td>${formatedDate}</td> 
                     <td>  
                         <a href="../admin/update-post.html?id=${blog['_id']}">Update</a> |
                         <a class="delete-link" data-id="${blog['_id']}" href="#">Delete</a>
