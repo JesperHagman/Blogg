@@ -1,6 +1,7 @@
 window.onload = function() {
     fetchAllBlogPosts();
 }
+let getDeleteBtns = document.getElementsByClassName("delete-link")
 
 async function fetchAllBlogPosts() {
     try {
@@ -12,7 +13,6 @@ async function fetchAllBlogPosts() {
             let blogDate = new Date(blog.date);
             let formatedDate = `${blogDate.getFullYear()}-${blogDate.getMonth() + 1}-${blogDate.getDate()} ${blogDate.getHours()}:${blogDate.getMinutes()}`
 
-            console.log(blog['_id'])
             blogPostsHTML += `
                 <tr> 
                     <th>Title</th> 
@@ -37,27 +37,24 @@ async function fetchAllBlogPosts() {
         document.getElementById('blog-list').innerHTML = blogPostsHTML;
     } catch(error) {
         console.log(error);
-    }  
-    deleteBlogEvent();
+}  
+
+for (let deleteBtn of getDeleteBtns) {
+    deleteBtn.addEventListener("click", deletePost)
+    }
 }
 
-function deleteBlogEvent() {
-    let deleteLinks = document.getElementsByClassName('delete-link');
-
-    for (let link of deleteLinks) {
-        link.addEventListener('click', async function(e) {
-            e.preventDefault();
-
-            try {
-                await fetch('http://localhost:5000/posts/' + e.target.dataset.id,
-                    {
-                        method: 'DELETE'
-                    }
-                );
-                e.target.parentNode.parentNode.remove();
-            } catch(error) {
-                console.log(error)
-            }
+async function deletePost(e) {
+   e.preventDefault();
+   try {
+       await fetch(`http://localhost:5000/posts/${this.dataset.id}`, {
+           method: 'DELETE',
         })
+    }catch(error) {
+        console.log(error)
     }
+    e.target.parentNode.parentNode.previousElementSibling.remove()
+    e.target.parentNode.parentNode.remove()
+    
+
 }
