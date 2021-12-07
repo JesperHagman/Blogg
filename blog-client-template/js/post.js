@@ -16,7 +16,7 @@ window.onload = function() {
                     blog.innerHTML = `
 
                     <h2> ${post.title}</h2>
-                    <p><strong>Tags:</strong>${post.tags.join(", ")}</p>
+                    <p><strong>Tags: </strong>${post.tags.join(", ")}</p>
                     <p><i><strong>${post.author}</strong></i> - ${formatedDate}</p>
                     <p>${post.content}</p>
                     `
