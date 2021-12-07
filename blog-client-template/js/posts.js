@@ -28,7 +28,7 @@ async function fetchPosts() {
 
             if (post.content.length > maxChar) {
               let readMore = document.createElement('a')
-              readMore.href ="post.html"
+              readMore.href =`post.html`
               readMore.innerText ="...read more"
               blogPosts.appendChild(readMore)
             }
