@@ -1,4 +1,23 @@
 #container {
-    width: 960px;
+    width: 50%;
     margin: 20px auto;
+}
+
+body {
+    background-color: rgb(235, 223, 201);
+}
+
+h1 {
+    padding-bottom: 20px;
+}
+
+#posts {
+    list-style-type: none;
+    margin-left: 10px;
+    padding-top: 20px;
+    border: 1px solid black;
+}
+
+.right {
+    float: right;
 }
