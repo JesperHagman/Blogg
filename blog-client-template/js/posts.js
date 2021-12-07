@@ -18,8 +18,11 @@ async function fetchPosts() {
 
             blogPosts.innerHTML += `
                 <h2> ${post.title}</h2>
+
                 <p><strong>Tags:</strong>${post.tags.join(", ")}</p>
-               <p><i><strong>${post.author}</strong></i> - ${formatedDate}</p>
+
+                <p><i><strong>${post.author}</strong></i> - ${formatedDate}</p>
+                
                 <li>
                     <p>${post.content.slice(0, 100)}</p>
                 </li>
