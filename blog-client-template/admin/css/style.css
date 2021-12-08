@@ -1,20 +1,21 @@
 html{
-    background-color: lightblue;
+   /*  background-color: lightblue; */
 }
-#blog-list, 
+/* #blog-list, 
 tr,
 th,
 td {
     border: 1px solid black;
     border-collapse: collapse;
-}
+} */
 .rightSide {
     float: right;
-}
+} 
 #blog-list{
-    width: 100%;
-    background-color: white; 
+    /* width: 100%; */
+    /* background-color: white;  */
 }
-#container{
+/* #container{
     margin: 0 10%;
 }
+ */

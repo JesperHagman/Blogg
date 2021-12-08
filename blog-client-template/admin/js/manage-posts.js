@@ -55,6 +55,4 @@ async function deletePost(e) {
     }
     e.target.parentNode.parentNode.previousElementSibling.remove()
     e.target.parentNode.parentNode.remove()
-    
-
 }
