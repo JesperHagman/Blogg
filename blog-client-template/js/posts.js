@@ -17,16 +17,10 @@ async function fetchPosts() {
             let formatedDate = `${postDate.getFullYear()}-${postDate.getMonth() + 1}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`
 
             blogPosts.innerHTML += `
-                <h2> ${post.title}</h2>
-
-                <p><strong>Tags: </strong>${post.tags.join(", ")}</p>
-
-                <p><i><strong>${post.author}</strong></i> - ${formatedDate}</p>
-                
-                <li>
-                    <p>${post.content.slice(0, 100)}</p>
-                </li>
-                <br>
+                 <h2 class="space"> ${post.title}</h2>
+                 <li><strong>Tags: </strong>${post.tags.join(", ")}</li>
+                 <li><i><strong>${post.author}</strong></i> - ${formatedDate}</li>
+                 <li>${post.content.slice(0, 100)} </li>
             `;
 
             if (post.content.length > maxChar) {

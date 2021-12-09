@@ -4,20 +4,28 @@
 }
 
 body {
-    background-color: rgb(235, 223, 201);
-}
-
-h1 {
-    padding-bottom: 20px;
+     background-color: rgb(235, 223, 201)!important; 
 }
 
 #posts {
     list-style-type: none;
     margin-left: 10px;
-    padding-top: 20px;
     border: 1px solid black;
+    border-radius: 1%;
 }
 
-.right {
+.link {
     float: right;
+    color: black;
 }
+
+.center {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.space {
+    padding-top: 50px;
+}
+
