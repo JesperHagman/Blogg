@@ -28,8 +28,8 @@ async function fetchAllBlogPosts() {
                     <td>${blog.tags}</td> 
                     <td>${formatedDate}</td>  
                     <td>  
-                        <a href="../admin/update-post.html?id=${blog['_id']}">Update</a> 
-                        <a class="delete-link" data-id="${blog['_id']}" href="#">Delete</a>
+                        <a class="text-dark" href="../admin/update-post.html?id=${blog['_id']}">Update</a> |
+                        <a class="delete-link text-dark" data-id="${blog['_id']}" href="#">Delete</a>
                     </td>
                 </tr>
             `
