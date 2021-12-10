@@ -11,8 +11,8 @@ window.onload = function() {
             await fetch(`http://localhost:5000/posts/${idFromUrl}`)
             .then((res) => res.json())
             .then((post) => {
-                    let postDate = new Date(post.date)
-                    let formatedDate = `${postDate.getFullYear()}-${postDate.getMonth() + 1}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`
+                let date = new Date(post.date);
+                let formatedDate = date.toDateString();
                     blog.innerHTML = `
 
                     <h2> ${post.title}</h2>

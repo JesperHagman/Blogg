@@ -13,14 +13,15 @@ async function fetchPosts() {
 
         for(let post of posts) {
 
-            let postDate = new Date(post.date);
-            let formatedDate = `${postDate.getFullYear()}-${postDate.getMonth() + 1}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`
+            let date = new Date(post.date);
+            let formatedDate = date.toDateString();
 
             blogPosts.innerHTML += `
                  <h2 class="space"> ${post.title}</h2>
                  <li><strong>Tags: </strong>${post.tags.join(", ")}</li>
                  <li><i><strong>${post.author}</strong></i> - ${formatedDate}</li>
-                 <li>${post.content.slice(0, 100)}</li> <a href="post.html?id=${post['_id']}">...read more</a>
+                 <li>${post.content.slice(0, 100)}<a href="post.html?id=${post['_id']}">...read more</a></li> 
+                 <hr>
             `;
 
             // if (post.content.length > maxChar) {
