@@ -1,6 +1,6 @@
 #container {
-    width: 50%;
-    margin: 20px auto;
+    width: 60%;
+    margin: 0 auto;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
     margin-left: 10px;
     border: 1px solid black;
     border-radius: 1%;
+    padding: 10px
 }
 
 .link {
@@ -26,6 +27,6 @@ body {
 }
 
 .space {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
