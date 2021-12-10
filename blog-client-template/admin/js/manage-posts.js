@@ -25,7 +25,7 @@ async function fetchAllBlogPosts() {
                 <tr> 
                     <td>${blog.title}</td>
                     <td> ${blog.author}</td>  
-                    <td>${blog.tags}</td> 
+                    <td>${blog.tags.join(", ")}</td> 
                     <td>${formatedDate}</td>  
                     <td>  
                         <a class="text-dark" href="../admin/update-post.html?id=${blog['_id']}">Update</a> |
