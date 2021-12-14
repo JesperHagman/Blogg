@@ -1,20 +1,60 @@
-/* 
-const queryString = window.location.search;
-let urlParams = new URLSearchParams(queryString);
-let idFromUrl = urlParams.get('id');
-
-(`http://localhost:5000/posts/${idFromUrl}`, {       //Blogginläggets id  // Satte id=${blog['_id'] så kolla på post.js hur jag gjorde där -Jesper
-*/
 
 window.onload = function () {
-    getBlogPost();
-}
-const queryString = window.location.search;
+    let queryString = location.search;
     let urlParams = new URLSearchParams(queryString);
     let idFromUrl = urlParams.get('id');
-    const url = (`http://localhost:5000/posts/${idFromUrl}`);
+    let url = (`http://localhost:5000/posts/${idFromUrl}`);
 
-const submitBtn = document.getElementById('submit-btn');
+    let id = urlParams + "61af793730c5ff026cb0ec1c"; //ta bort sen
+
+    getBlogPost();
+
+    updateBlogPost();
+}
+
+async function getBlogPost(id) {
+    try {
+        let response = await fetch(url);
+        let blogPost = await response.json();
+
+        document.getElementById('title').value = blogPost.title;
+        document.getElementById('author').value = blogPost.author;
+        document.getElementById('tags').value = blogPost.tags;
+        document.getElementById('content').value = blogPost.content;
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+function updateBlogPost(id) {
+    let postUpdate = document.getElementById('update-post');
+    postUpdate.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        let postData = new FormData(postData);
+        postDataObject = {
+            "title": postData.get('title'),
+            "author": postData.get('author'),
+            "tags": postData.get('tags'),
+            "content": postData.get('content')
+        }
+
+        try {
+            await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postDataObject)
+            })
+
+            location.replace('admin/index.html');
+        } catch (error) {
+            console.log(error);
+        }
+    })
+}
+
+/* const submitBtn = document.getElementById('submit-btn');
 const updatePost = document.getElementById('update-post');
 
 
@@ -54,7 +94,7 @@ async function postBlogPost({url, formdata}) {
     const formDataJsonString = JSON.stringify(plainFormData);
 
     const fetchOptions = {
-        method: "POST",
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
@@ -68,4 +108,4 @@ async function postBlogPost({url, formdata}) {
         console.log(error);
     }
     return response.json();
-}};
+}}; */
