@@ -1,22 +1,22 @@
 
 window.onload = function () {
-    let queryString = location.search;
+   /*  let queryString = location.search;
     let urlParams = new URLSearchParams(queryString);
-    let idFromUrl = urlParams.get('id');
-    let url = (`http://localhost:5000/posts/${idFromUrl}`);
+    
+ */
 
-    let id = urlParams + "61af793730c5ff026cb0ec1c"; //ta bort sen
 
-    getBlogPost();
+    /* getBlogPost(); */
 
-    updateBlogPost();
 }
 
-async function getBlogPost(id) {
+/* async function getBlogPost() {
     try {
-        let response = await fetch(url);
+        let response = await fetch(`http://localhost:5000/posts/${urlParams.get('_id')}`);
         let blogPost = await response.json();
-
+        
+        let author = document.getElementById('author') = blogPost.author;
+        
         document.getElementById('title').value = blogPost.title;
         document.getElementById('author').value = blogPost.author;
         document.getElementById('tags').value = blogPost.tags;
@@ -24,6 +24,49 @@ async function getBlogPost(id) {
     } catch(error) {
         console.log(error);
     }
+}
+*/
+
+const queryString = window.location.search;
+let urlParams = new URLSearchParams(queryString);
+let idFromUrl = urlParams.get('id')
+
+getBlogPost()
+updateBlogPost();
+
+async function getBlogPost() {
+    let oldPost = document.getElementById('content')
+    let oldTitle = document.getElementById("title")
+    let oldAuthor = document.getElementById("author")
+
+    try {
+        await fetch(`http://localhost:5000/posts/${idFromUrl}`)
+            .then((res) => res.json())
+            .then((data) => {
+                oldPost.innerHTML = data.content
+                oldTitle.value = data.title
+                oldAuthor.value = data.author
+              
+let arrayOfTags = [
+    "travel",
+    "food",
+    "painting",
+    "coding",
+    "javascript"
+]
+                for(let tags of arrayOfTags) {
+                    if(data.tags.includes(tags)) {
+                        let checked = "checked"
+                         document.getElementById("tags").innerHTML += `<input ${checked} name="tags"type="checkbox"value="${tags}">${tags}</input>`
+                        }else {
+                            document.getElementById("tags").innerHTML += `<input name="tags"type="checkbox"value="${tags}">${tags}</input>`
+                        }  
+                }
+        
+            })
+        } catch(error) {
+                console.log(error)
+        }     
 }
 
 function updateBlogPost(id) {
