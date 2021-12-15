@@ -7,6 +7,20 @@
 .rightSide {
     float: right;
 } 
+
+#blog-list th {
+    color: white;
+    background-color: #D9AFD9;
+
+}
+
+#blog-list td {
+    color: #97D9E1;
+    text-transform: capitalize;
+    font-style: none;
+}
+
+
 /* Create-post */
 body {
     background-color: #D9AFD9;
