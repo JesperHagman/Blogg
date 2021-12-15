@@ -1,20 +1,36 @@
+:root {
+    --blue: #97D9E1;
+    --pink: #D9AFD9;
+}
+
 /* Index -admin */
 .rightSide {
     float: right;
 } 
 /* Create-post */
+body {
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    color: white;
+    
+}
 #container {
     width: 100%;
-    font-family: 'Times New Roman', Times, serif;   
+    font-family: 'Times New Roman', Times, serif;  
+    text-align: center;
 }
 
 #container h1{
     text-align: center;
+    display: absolute;
+    color: white;
 }
 
 #container form {
     margin: auto;
     width: 70%;
+    border: none;
+    color: white;
 }
 
 #container form h4{
@@ -26,6 +42,9 @@
 #container form input {
     width: 500px;
     height: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
 #container form #tags input {
@@ -34,16 +53,101 @@
     position: relative;
     vertical-align: middle;
     bottom: 1px;
+    border: none;
+    text-align: center;
+}
+
+#tags {
+    text-align: center;
 }
 
 #container form #content-textarea{
     width: 490px;
     height: 150px;
     margin-bottom: 20px;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 10px;
 }
 
 #container form #submit{
     width: 150px;
     border: none;
+    text-align: center;
+}
+
+.submit-btn input {
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+form a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Update-post */
+
+#UpdateBlogPost {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;  
+    text-align: center;
+}
+
+#UpdateBlogPost h1{
+    text-align: center;
+    display: absolute;
+    color: white;
+}
+
+#UpdateBlogPost form {
+    margin: auto;
+    width: 70%;
+    border: none;
     
+}
+
+#UpdateBlogPost form h4{
+    font-size: 1rem;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+#UpdateBlogPost form input {
+    width: 500px;
+    height: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#UpdateBlogPost form #tags input {
+    font-size: 1rem;
+    width: 15px;
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+    border: none;
+    text-align: center;
+}
+
+#tags {
+    text-align: center;
+}
+
+#UpdateBlogPost form #content{
+    width: 490px;
+    height: 150px;
+    margin-bottom: 20px;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 10px;
+}
+
+#UpdateBlogPost form #submit{
+    width: 150px;
+    border: none;
+    text-align: center;
 }

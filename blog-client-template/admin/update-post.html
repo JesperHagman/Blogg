@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style-update.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -12,18 +12,23 @@
         <h1>Update blogpost</h1>
 
         <form id="update-post">
-            
-            <input type="text" name="title" id="title"><br>
+            <h4>Author</h4>
             <input type="text" name="author" id="author"><br>
-            <div id="tags">Tags:
+
+            <h4>Title</h4>
+            <input type="text" name="title" id="title"><br>
+
+            <h4>Tags:</h4>
+            <div id="tags"></div>
                 
-            </div>
+            <h4>Content</h4>
             <textarea name="content" id="content"></textarea><br>
             
-            <input id="submit" type="submit" value="Update">
-
-            <a href="index.html">Back</a>
-           
+            <div class="submit-btn">
+            <input id="submit" type="submit" value="Update"><br>
+            <a href="index.html">&#x2190; Back</a>
+            </div>
+            
         </form>
 
     </div>
