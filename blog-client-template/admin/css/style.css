@@ -1,3 +1,49 @@
+/* Index -admin */
 .rightSide {
     float: right;
 } 
+/* Create-post */
+#container {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;   
+}
+
+#container h1{
+    text-align: center;
+}
+
+#container form {
+    margin: auto;
+    width: 70%;
+}
+
+#container form h4{
+    font-size: 1rem;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+#container form input {
+    width: 500px;
+    height: 2rem;
+}
+
+#container form #tags input {
+    font-size: 1rem;
+    width: 15px;
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+}
+
+#container form #content-textarea{
+    width: 490px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+#container form #submit{
+    width: 150px;
+    border: none;
+    
+}

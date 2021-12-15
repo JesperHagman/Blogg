@@ -5,18 +5,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
 </head>
+'
 <body class = "p-3 mb-2 bg-info">
+    
     <div id="container" class="container">
-    <a href="../index.html" class="rightSide text-dark">Blog page</a> 
 
-        <h1>Handle blog posts</h1>
-        
-        <nav id="main-nav">
-            <a href="create-post.html" class="rightSide text-dark">Create new post</a>
+        <nav>
+            <a href="create-post.html" class="rightSide text-light">Create new post</a><br>
+            <a href="../index.html" class="rightSide text-light">Blog page</a> 
         </nav>
+
+        <div class="d-flex justify-content-around pb-3 text-light" >
+            <h1>Handle blog posts</h1>
+        </div>
 
         <table id="blog-list" class="table table-striped table-bordered table-responsive{-sm|-md|-lg|-xl} bg-light">
         </table>
