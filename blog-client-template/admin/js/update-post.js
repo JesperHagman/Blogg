@@ -47,17 +47,17 @@ let arrayOfTags = [
 }
 
 function updateBlogPost() {
-    let postUpdate = document.getElementById('update-post');
+    let form = document.getElementById('update-post');
 
-    postUpdate.addEventListener('submit', async function (e) {
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        let postData = new FormData(post);
-        postDataObject = {
-            "title": postData.get('title'),
-            "author": postData.get('author'),
-            "tags": postData.get('tags'),
-            "content": postData.get('content')
+        let formData = new FormData(form);
+        formDataObject = {
+            "title": formData.get('title'),
+            "author": formData.get('author'),
+            "tags": formData.getAll('tags'),
+            "content": formData.get('content')
         }
         console.log(formDataObject)
         console.log(JSON.stringify(formDataObject));
@@ -68,10 +68,11 @@ function updateBlogPost() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(postDataObject)
+                body: JSON.stringify(formDataObject)
             })
 
             location.replace('index.html');
+
         } catch (error) {
             console.log(error);
         }
