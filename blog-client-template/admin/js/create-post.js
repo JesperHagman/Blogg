@@ -12,9 +12,9 @@ function createPostEvent() {
         let formData = new FormData(form);
         formDataObject = {
             "content": formData.get('content'),
-            "author": formData.get('author'),
-            "title": formData.get('title'),
-            "tags": formData.getAll('tags')   
+            "author":  formData.get('author'),
+            "title":   formData.get('title'),
+            "tags":    formData.getAll('tags')   
         }
         try {
             await fetch('http://localhost:5000/posts', {
@@ -23,12 +23,9 @@ function createPostEvent() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formDataObject),
-            
             })
-
             location.replace('index.html');
         } catch(error) {
-
         }
     });
 }

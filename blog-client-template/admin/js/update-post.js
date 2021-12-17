@@ -31,19 +31,19 @@ let arrayOfTags = [
     "coding",
     "javascript"
 ]
-                for(let tags of arrayOfTags) {
-                    if(data.tags.includes(tags)) {
-                        let checked = "checked"
-                         document.getElementById("tags").innerHTML += `<input ${checked} name="tags"type="checkbox"value="${tags}">${tags}</input>`
-                        }else {
-                            document.getElementById("tags").innerHTML += `<input name="tags"type="checkbox"value="${tags}">${tags}</input>`
-                        }  
-                }
+    for(let tags of arrayOfTags) {
         
-            })
-        } catch(error) {
-                console.log(error)
-        }     
+        if(data.tags.includes(tags)) {
+            let checked = "checked"
+            document.getElementById("tags").innerHTML += `<input ${checked} name="tags"type="checkbox"value="${tags}">${tags}</input>`
+        }else {
+            document.getElementById("tags").innerHTML += `<input name="tags"type="checkbox"value="${tags}">${tags}</input>`
+        }  
+    }       
+})
+    } catch(error) {
+        console.log(error)
+    }     
 }
 
 function updateBlogPost() {
