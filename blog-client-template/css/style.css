@@ -26,6 +26,8 @@ body {
     height: 20px;
     width: -30px;
     float: right;
+    position: sticky;
+    top: 5;
 }
 
 #navbar a {   
