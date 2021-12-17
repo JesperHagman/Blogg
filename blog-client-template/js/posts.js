@@ -17,10 +17,13 @@ async function fetchPosts() {
             let formatedDate = date.toDateString();
 
             blogPosts.innerHTML += `
-                 <h2 class="space"> ${post.title}</h2><br>
+                 <h2 class="space"> ${post.title}</h2>
+                 <br>
                  <li><strong>Tags: </strong>${post.tags.join(", ")}</li>
                  <li><i><strong>${post.author}</strong></i> - ${formatedDate}</li>
-                 <li>${post.content.slice(0, 100)}<a href="post.html?id=${post['_id']}"><br>...read more</a></li> 
+                 <li>${post.content.slice(0, 100)}<a href="post.html?id=${post['_id']}">
+                 <br>
+                 ...read more</a></li> 
                  <hr>
             `;
 
