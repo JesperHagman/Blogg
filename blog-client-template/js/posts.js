@@ -9,8 +9,6 @@ async function fetchPosts() {
         let response = await fetch('http://localhost:5000/posts');
         let posts = await response.json();
 
-        // let maxChar = 100
-
         for(let post of posts) {
 
             let date = new Date(post.date);
@@ -26,14 +24,6 @@ async function fetchPosts() {
                  ...read more</a></li> 
                  <hr>
             `;
-
-            // if (post.content.length > maxChar) {
-            //   let readMore = document.createElement('a')
-            //   readMore.href =`post.html?id=${post['_id']}`
-            //   readMore.innerText ="...read more"
-            //   blogPosts.appendChild(readMore)
-            // }
-
         }
 
     } catch(error) {
