@@ -31,13 +31,14 @@ function createPostEvent() {
 }
 function generateTags(){
     let tags = document.getElementById("tags")
-    tags.innerHTML = `
+    tags.innerHTML = ` 
         <input name="tags" type="checkbox" value="travel">     Travel     </input>
         <input name="tags" type="checkbox" value="food">       Food       </input>
         <input name="tags" type="checkbox" value="painting">   Painting   </input>
         <input name="tags" type="checkbox" value="coding">     Coding     </input>
         <input name="tags" type="checkbox" value="javascript"> Javascript </input>
-    `
+        <input name="tags" type="checkbox" value="pun">        Pun </input>
+    ` // to add or remove a tag you need to add/remove in update-post.js aswell
 }
 
     

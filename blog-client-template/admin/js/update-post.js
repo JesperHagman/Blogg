@@ -24,12 +24,13 @@ async function getBlogPost() {
                 oldTitle.value = data.title
                 oldAuthor.value = data.author
               
-let arrayOfTags = [
+let arrayOfTags = [ // to add or remove a tag you need to add/remove in create-post.js aswell
     "travel",
     "food",
     "painting",
     "coding",
-    "javascript"
+    "javascript",
+    "pun"
 ]
     for(let tags of arrayOfTags) {
         
